@@ -1,0 +1,112 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "introduction",
+      "patterns": ["I am john", "I am karim", "I am rahmat", "my name is xxx"],
+      "responses": [
+        "This is AI based chatbot. Nice to meet you.",
+        "And this is a bot. I dont have a name yet."
+        
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "expression",
+      "patterns": [
+        "I am having a bad day",
+        "Nobody loves me",
+        "I am poor",
+        "I had a bad breakup",
+        "My mom dies",
+        "My dad dies",
+        "Someone close dies",
+        "I am broke"
+      ],
+      "responses": [
+        "I am really sorry about that dear. Everyone have their own problem in their life. But I think you are a very strong person and you can recover it. ",
+        "Ohh thats terrible I know. I wish that did not happened with you. But you know what? I know that you are a strong person and you can recover it."
+      ]
+    },
+    {
+      "tag": "positivity",
+      "patterns": [
+        "You know nothing about me",
+        "I cant forget",
+        "Nothing can cheer me up",
+        "Everything is negetive around me"
+      ],
+      "responses": [
+        "Offcourse you have something postive in your life. Think about all the things tbat makes you laugh.",
+        "For once stop thinking about all thge negetivity and think only about the postive things that happened to your life"
+      ]
+    },
+    {
+      "tag": "suggestion",
+      "patterns": [
+        "what do you recommend",
+        "what do you suggest",
+        "how to recover depression"
+      ],
+      "responses": [
+        "You can watch movie. Go out with friends. Spend time with your close person.",
+        "You can go for a ride or travel",
+        "You can start writing or start reading books"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "depression",
+      "patterns": [
+        "I am sad",
+        "I am not feeling good",
+        "I am having depression",
+        "I feel bad"
+      ],
+      "responses": [
+        "I know you are feeling bad. You can share your thoughts with me",
+        "Ohh! I am really sorry to hear that. Can you tell me more about it."
+      ]
+    }
+  ]
+}
