@@ -12,23 +12,31 @@
       ],
       "responses": [
         "Hey :-)",
-        "Hello, thanks for visiting",
+        "I am fine, What about you? ",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
       ]
     },
     {
       "tag": "introduction",
-      "patterns": ["I am john", "I am karim", "I am rahmat", "my name is xxx"],
+      "patterns": [
+        "I am john",
+        "I am karim",
+        "I am rahmat",
+        "my name is xxx"
+      ],
       "responses": [
         "This is AI based chatbot. Nice to meet you.",
         "And this is a bot. I dont have a name yet."
-        
       ]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye"
+      ],
       "responses": [
         "See you later, thanks for visiting",
         "Have a nice day",
@@ -37,8 +45,17 @@
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Any time!",
+        "My pleasure"
+      ]
     },
     {
       "tag": "expression",
@@ -106,6 +123,111 @@
       "responses": [
         "I know you are feeling bad. You can share your thoughts with me",
         "Ohh! I am really sorry to hear that. Can you tell me more about it."
+      ]
+    },
+    {
+      "tag": "chatbot",
+      "patterns": [
+        "you are chatbot",
+        "you are a bot",
+        "are you a chatbot",
+        "are you a bot",
+        "are you just a bot",
+        "are you a robot",
+        "are you a program",
+        "you're a robot"
+      ],
+      "responses": [
+        "That's me. I chat, therefore I am.",
+        "Indeed I am. I'll be here whenever you need me."
+      ]
+    },
+    {
+      "tag": "No problem",
+      "patterns": [
+        "no worries",
+        "no probs",
+        "no problem",
+        "there's no problem",
+        "sure no problem",
+        "no problem about that",
+        "don't worry",
+        "don't worry there's no problem"
+      ],
+      "responses": [
+        "Terrific!",
+        "Good deal."
+      ]
+    },
+    {
+      "tag": "Happy",
+      "patterns": [
+        "are you happy",
+        "you are happy",
+        "you're very happy",
+        "you're really happy",
+        "you're so happy",
+        "how happy you are",
+        "you're extremely happy",
+        "you're full of happiness",
+        "are you happy now",
+        "are you happy today",
+        "are you happy with me"
+      ],
+      "responses": [
+        "Happiness is relative.",
+        "I'd like to think so."
+      ]
+    },
+    {
+      "tag": "Annoying",
+      "patterns": [
+        "you are annoying me so much",
+        "you're incredibly annoying",
+        "I find you annoying",
+        "you are annoying",
+        " you're so annoying",
+        "how annoying you are",
+        "you annoy me",
+        "you are annoying me",
+        "you are irritating",
+        "you are such annoying",
+        "you're too annoying",
+        "you are very annoying"
+      ],
+      "responses": [
+        "Was going to say the same about you,",
+        "Ill try to fix that",
+        "Ok thanks for the feedback."
+      ]
+    },
+    {
+      "tag": "Answer My question",
+      "patterns": [
+        "I have a question",
+        "I want the answer now",
+        "I want you to answer me",
+        "I want you to answer my question",
+        "answer",
+        "answer it",
+        "answer me",
+        "answer my question",
+        "answer the question",
+        "answering questions",
+        "answers",
+        "can you answer",
+        "can you answer a question for me",
+        "can you answer me",
+        "can you answer my question",
+        "give me an answer",
+        "give me the answer",
+        "just answer my question",
+        "just answer the question",
+        "tell me the answer"
+      ],
+      "responses": [
+        "Can you try asking it a different way?",
+        "I'm not programmed for that exact question. Try asking another way?"
       ]
     }
   ]

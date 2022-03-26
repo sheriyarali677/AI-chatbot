@@ -1,78 +1,321 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <title>ChatBot</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
-
-<style type="text/css">
-.neonText {
-  color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+    <style type="text/css">
+        .neonText {
+          color: #fff;
+          text-shadow:
+              0 0 7px #fff,
+              0 0 10px #fff,
+              0 0 21px #fff,
+              0 0 42px #0fa,
+              0 0 82px #0fa,
+              0 0 92px #0fa,
+              0 0 102px #0fa,
+              0 0 151px #0fa;
+        }
+        
+        /* Additional styling */
+        
+        .card-bordered {
+    border: 1px solid #ebebeb
 }
 
-/* Additional styling */
-
-body {
-  font-size: 18px;
-  font-family: "Vibur", sans-serif;
-  background-image:url("https://media.istockphoto.com/photos/black-paper-texture-background-with-spotlight-picture-id175413535?k=20&m=175413535&s=612x612&w=0&h=cr7qPgYpfbMBY23o4bHhJTuVNClnV7YKqYXxszJW7vc=");
-}
-
-h1, h2 {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-h1 {
-    font-size: 4.2rem;
-}
-
-h2 {
-    font-size: 1.8rem;
+.card {
+    border: 0;
+    border-radius: 0px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+    -webkit-transition: .5s;
+    transition: .5s
 }
 
 .container {
-  margin-top: 20vh;
+    margin-top: 20vh;
+  }
+
+.padding {
+    padding: 3rem !important
 }
-</style>
 
-<script type="text/javascript">
+body {
+    background-color: black!important;
+}
 
-</script>
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+}
 
-  </head>
-  <body>
-    <br>
-    <br>
+.card-header {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(77, 82, 89, 0.07)
+}
 
-<div class="container"style="overflow:scroll;max-height:100%;border:3px solid green;background-color:'d3d3d3';max-width:50%;margin:auto;">
-<h1 class="neonText" style="font-family: 'Supermercado One', cursive;"> MotBot</h1>
-    <div id="message_holder" class="container text-center">
+.card-header .card-title {
+    padding: 0;
+    border: none
+}
 
+h4.card-title {
+    font-size: 17px
+}
+
+.card-header>*:last-child {
+    margin-right: 0
+}
+
+.card-header>* {
+    margin-left: 8px;
+    margin-right: 8px
+}
+
+
+.card-title {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(77, 82, 89, 0.07)
+}
+
+.ps-container {
+    position: relative
+}
+
+.ps-container {
+    -ms-touch-action: auto;
+    touch-action: auto;
+    overflow: hidden !important;
+    -ms-overflow-style: none
+}
+
+.media-chat {
+    padding-right: 64px;
+    margin-bottom: 0
+}
+
+.media {
+    padding: 16px 12px;
+    -webkit-transition: background-color .2s linear;
+    transition: background-color .2s linear
+}
+
+.media-chat .media-body {
+    -webkit-box-flex: initial;
+    flex: initial;
+    display: table
+}
+
+.media-body {
+    min-width: 0
+}
+
+.media-chat .media-body p {
+    position: relative;
+    padding: 6px 8px;
+    margin: 4px 0;
+    background-color: #f5f6f7;
+    border-radius: 3px;
+    font-weight: 100;
+    color: #9b9b9b
+}
+
+.media>* {
+    margin: 0 8px
+}
+
+.media-chat .media-body p.meta {
+    background-color: transparent !important;
+    padding: 0;
+    opacity: .8
+}
+
+
+
+.media {
+    padding: 16px 12px;
+    -webkit-transition: background-color .2s linear;
+    transition: background-color .2s linear
+}
+
+
+
+.media-chat {
+    padding-right: 64px;
+    margin-bottom: 0
+}
+
+.media {
+    padding: 16px 12px;
+    -webkit-transition: background-color .2s linear;
+    transition: background-color .2s linear
+}
+
+
+
+.border-light {
+    border-color: #f1f2f3 !important
+}
+
+.bt-1 {
+    border-top: 1px solid #ebebeb !important
+}
+
+.publisher {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #f9fafb
+}
+
+.publisher>*:first-child {
+    margin-left: 0
+}
+
+.publisher>* {
+    margin: 0 8px
+}
+
+.publisher-input {
+    -webkit-box-flex: 1;
+    flex-grow: 2;
+    border: none;
+    outline: none !important;
+    background-color: white;
+    padding: 6px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#submit {
+    background-color: #00efd1;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    overflow: -moz-hidden-unscrollable;
+    -webkit-transition: .2s linear;
+    transition: .2s linear
+}
+
+
+
+#submit {
+    background-color: #20efd1;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: -moz-hidden-unscrollable;
+    -webkit-transition: .2s linear;
+    transition: .2s linear
+}
+
+
+
+.text-info {
+    color: #48b0f7 !important
+}
+
+
+.neonText {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+  }
+
+
+        
+        
+        </style>
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row .container-fluid d-flex justify-content-center">
+                <div class="col-md-6">
+                    <div class="card card-bordered">
+                        <div class="card-header">
+                            <h4 class="card-title" style="color:black;"><strong>AI ChatBot</strong></h4> <a class="neonText btn btn-xs btn-warning" style="font-family: 'Supermercado One', cursive;" href="#" data-abc="true">MotBot</a> 
+                        </div>
+                        <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:600px !important;">
+                            <div class="media media-chat"> 
+                                <div id="message_holder" class="container text-light">
+
+                                </div>
+
+                                
+                                
+                                
+                            </div>
+                            
+                           
+                            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                                <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                            </div>
+                            <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
+                                <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
+                            </div>
+                        </div>
+                        <div class="publisher w-100 bt-1 border-light"> 
+                            
+                            <img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-bot-artificial-intelligence-kiranshastry-lineal-color-kiranshastry.png" alt="..."> 
+                            
+                            <form class="w-100" method="post" id="formy" required autocomplete="off">
+                                <input class="publisher-input" id="message" type="text" placeholder="Write something"> 
+                                
+                                <input type="submit" id="submit" value="send" class="btn btn-primary" omclick="scroll()"/><br><br>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <form method="post" id="formy" required autocomplete="off">
-      <input type="text" id="message" placeholder="Messages"/>
-      <input type="submit" id="submit" value="send" class="btn btn-primary" omclick="scroll()"/><br><br>
-    </form>
-</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -82,7 +325,7 @@ h2 {
                 {
     console.log('form submitted');
     e.preventDefault();
-    $("#message_holder").append("<h3 style='color:white;'> You: <span style='border-radius: 25px;background: #73AD21;padding: 20px;width:auto;color:white;'> "+$("#message").val()+"</span></h3><br><br>")
+    $("#message_holder").append("<h3 style='color:black;'> You: <span style='border-radius: 5px;background:#f9fafb;padding: 5px;width:auto;color:black;'> "+$("#message").val()+"</span></h3><br><br>")
     $.ajax({
         type:'POST',
         url:'/make-reply',
@@ -91,7 +334,7 @@ h2 {
         },
         success:function(response)
         {
-        $("#message_holder").append("<h3 style='color:white;'> Sam: "+response.reply+"</h3><br><br>")
+        $("#message_holder").append("<h3 style='color:black;'> Motbot: "+response.reply+"</h3><br><br>")
         $("#message").val(' ')
         //window.scrollTo(0,document.body.scrollHeight);
         $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
@@ -100,6 +343,10 @@ h2 {
     });
 </script>
 
-<!--  -->
-  </body>
-  </html>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

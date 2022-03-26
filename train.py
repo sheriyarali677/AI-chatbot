@@ -1,11 +1,12 @@
+# Importing Necessary Modules
 import numpy as np
 import random
 import json
-
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
+#Import necessary inputs from natural language toolkit
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
@@ -15,7 +16,7 @@ with open('intents.json', 'r') as f:
 all_words = []
 tags = []
 xy = []
-# loop through each sentence in our intents patterns
+
 for intent in intents['intents']:
     tag = intent['tag']
     # add to tag list
@@ -53,7 +54,7 @@ for (pattern_sentence, tag) in xy:
 X_train = np.array(X_train)
 y_train = np.array(y_train)
 
-# Hyper-parameters 
+# parameters 
 num_epochs = 1000
 batch_size = 8
 learning_rate = 0.001
