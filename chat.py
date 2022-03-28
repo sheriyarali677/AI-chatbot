@@ -28,8 +28,8 @@ def make_reply():
     # motbot script
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    with open('intents.json', 'r') as json_data:
-        intents = json.load(json_data)
+    with open('dataintents.json', 'r') as json_data:
+        dataintents = json.load(json_data)
 
     FILE = "data.pth" #file where new bag of words are stored and used when training the chatbot
     data = torch.load(FILE)
@@ -66,16 +66,16 @@ def make_reply():
 
         tag = tags[predicted.item()]
 
-        probs = torch.softmax(output, dim=1)
-        prob = probs[0][predicted.item()]
+        probability = torch.softmax(output, dim=1)
+        prob = probability[0][predicted.item()]
         print(tag)
         if prob.item() > 0.65:
-            for intent in intents['intents']:
+            for intent in dataintents ['dataintents']:
                 if tag == intent["tag"]:
                     
                     return {"reply":random.choice(intent['responses'])}
         else:
-            return {"reply":"I did not understand..."}
+            return {"reply":"Sorry, Can you ask more clearly as I did not understand..."}
 
 
 if __name__ == '__main__':

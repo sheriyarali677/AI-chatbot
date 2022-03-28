@@ -1,5 +1,5 @@
 {
-  "intents": [
+  "dataintents": [
     {
       "tag": "greeting",
       "patterns": ["Hi", "Hey", "How are you", "Is anyone there?", "Good day"],

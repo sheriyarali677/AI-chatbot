@@ -10,14 +10,14 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-with open('intents.json', 'r') as f:
-    intents = json.load(f)
+with open('dataintents.json', 'r') as f:
+    dataintents = json.load(f)
 
 all_words = []
 tags = []
 xy = []
 
-for intent in intents['intents']:
+for intent in dataintents ['dataintents']:
     tag = intent['tag']
     # add to tag list
     tags.append(tag)
