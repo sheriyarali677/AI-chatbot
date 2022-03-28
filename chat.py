@@ -40,7 +40,7 @@ def make_reply():
     #data output size
     output_size = data["output_size"]
 
-    all_words = data['all_words']
+    word_bag = data['word_bag']
     #loading all words and tags into data file inorder to have improve next session
     tags = data['tags']
     model_state = data["model_state"]
@@ -57,7 +57,7 @@ def make_reply():
             break
         #tokenization
         lines = tokenize(lines)
-        X = bag_of_words(lines, all_words)
+        X = bag_of_words(lines, word_bag)
         X = X.reshape(1, X.shape[0])
         X = torch.from_numpy(X).to(device)
 

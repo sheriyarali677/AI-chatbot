@@ -13,7 +13,7 @@ from model import NeuralNet
 with open('dataintents.json', 'r') as f:
     dataintents = json.load(f)
 
-all_words = []
+word_bag = []
 tags = []
 xy = []
 
@@ -25,29 +25,29 @@ for intent in dataintents ['dataintents']:
         # tokenize each word in the sentence
         w = tokenize(pattern)
         # add to our words list
-        all_words.extend(w)
+        word_bag.extend(w)
         # add to xy pair
         xy.append((w, tag))
 
 # stem and lower each word
 ignore_words = ['?', '.', '!']
-all_words = [stem(w) for w in all_words if w not in ignore_words]
+word_bag = [stem(w) for w in word_bag if w not in ignore_words]
 # remove duplicates and sort
-all_words = sorted(set(all_words))
+word_bag = sorted(set(word_bag))
 tags = sorted(set(tags))
 
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
-print(len(all_words), "unique stemmed words:", all_words)
+print(len(word_bag), "unique stemmed words:", word_bag)
 
 # create training data
 X_train = []
 y_train = []
 for (pattern_sentence, tag) in xy:
-    # X: bag of words for each pattern_sentence
-    bag = bag_of_words(pattern_sentence, all_words)
+
+    bag = bag_of_words(pattern_sentence, word_bag)
     X_train.append(bag)
-    # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
+    
     label = tags.index(tag)
     y_train.append(label)
 
@@ -120,7 +120,7 @@ data = {
 "input_size": input_size,
 "hidden_size": hidden_size,
 "output_size": output_size,
-"all_words": all_words,
+"word_bag": word_bag,
 "tags": tags
 }
 
