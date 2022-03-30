@@ -26,26 +26,26 @@ def make_reply():
     message=request.form['message']
 
     # motbot script
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cpu')
 
     with open('dataintents.json', 'r') as json_data:
         dataintents = json.load(json_data)
 
-    FILE = "data.pth" #file where new bag of words are stored and used when training the chatbot
+    FILE = "data_output.pth" #file where new bag of words are stored and used when training the chatbot
     data = torch.load(FILE)
     #data input size
-    input_size = data["input_size"]
+    size_input = data["size_input"]
 
-    hidden_size = data["hidden_size"]
+    size_hidden = data["size_hidden"]
     #data output size
-    output_size = data["output_size"]
+    size_output = data["size_output"]
 
     word_bag = data['word_bag']
     #loading all words and tags into data file inorder to have improve next session
     tags = data['tags']
     model_state = data["model_state"]
 
-    model = NeuralNet(input_size, hidden_size, output_size).to(device)
+    model = NeuralNet(size_input, size_hidden, size_output).to(device)
     model.load_state_dict(model_state)
     model.eval()
 
