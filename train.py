@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch
 
 #Import necessary inputs from natural language toolkit
-from neuralnet import NeuralNet
+from neuralnet import Modelnet
 from nltk_utils import bag_of_words
 from nltk_utils import tokenize
 from nltk_utils import stem
@@ -83,7 +83,7 @@ dataset = ChatDataset()
 train_loader = DataLoader(dataset=dataset, batch_size=size_batch, num_workers=0, shuffle=True)
 
 device = torch.device('cpu')
-model = NeuralNet(size_input, size_hidden, size_output).to(device)
+model = Modelnet(size_input, size_hidden, size_output).to(device)
 
 # Loss and optimiser
 opt = torch.optim.Adam(model.parameters(), lr=lr)

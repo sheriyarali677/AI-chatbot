@@ -6,7 +6,7 @@ from flask_socketio import SocketIO,send,join_room
 import torch
 import json
 import nltk 
-from neuralnet import NeuralNet
+from neuralnet import Modelnet
 from nltk_utils import bag_of_words, tokenize
 
 
@@ -45,7 +45,7 @@ def make_reply():
     tags = data['tags']
     model_state = data["model_state"]
 
-    model = NeuralNet(size_input, size_hidden, size_output).to(device)
+    model = Modelnet(size_input, size_hidden, size_output).to(device)
     model.load_state_dict(model_state)
     model.eval()
 
