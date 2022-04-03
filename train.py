@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch
 
 #Import necessary inputs from natural language toolkit
-from model import NeuralNet
+from neuralnet import NeuralNet
 from nltk_utils import bag_of_words
 from nltk_utils import tokenize
 from nltk_utils import stem

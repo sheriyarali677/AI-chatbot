@@ -6,7 +6,7 @@ from flask_socketio import SocketIO,send,join_room
 import torch
 import json
 import nltk 
-from model import NeuralNet
+from neuralnet import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
 
