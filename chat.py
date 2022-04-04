@@ -53,8 +53,7 @@ def make_reply():
     print("Start chat! ")
     while True:
         lines = message
-        if lines == "quit":
-            break
+        
         #tokenization
         lines = tokenize(lines)
         X = bag_of_words(lines, word_bag)
