@@ -8,9 +8,9 @@ import torch
 
 #Import necessary inputs from natural language toolkit
 from neuralnet import Modelnet
-from nltk_utils import bag_of_words
-from nltk_utils import tokenize
-from nltk_utils import stem
+from nltk_ls import bag_of_words
+from nltk_ls import tokenize
+from nltk_ls import stem
 
 with open('dataintents.json', 'r') as f:
     dataints = json.load(f)
@@ -41,7 +41,7 @@ print(len(tags), "tags:", tags)
 print(len(word_bag), "unique stemmed words:", word_bag)
 print(len(xy), "patterns")
 
-# create training data
+#training data
 X_train_data = []
 y_train_data = []
 for (pat_sent, tag) in xy:
@@ -98,7 +98,6 @@ for epoch in range(epoch_count):
         
         # Forward pass
         outputs = model(words)
-        # if y would be one-hot, we must apply
         # lbls = torch.max(lbls, 1)[1]
         loss = crit(outputs, lbls)
         

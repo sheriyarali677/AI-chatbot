@@ -1,6 +1,6 @@
 import numpy as np
 import nltk
-# nltk.download('punkt')
+#Snowball stemmer
 from nltk.stem.snowball import EnglishStemmer
 stemmer = EnglishStemmer()
 def tokenize(sentence):

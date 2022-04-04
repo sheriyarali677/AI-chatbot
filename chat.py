@@ -7,7 +7,7 @@ import torch
 import json
 import nltk 
 from neuralnet import Modelnet
-from nltk_utils import bag_of_words, tokenize
+from nltk_ls import bag_of_words, tokenize
 
 
 
