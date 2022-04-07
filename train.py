@@ -12,7 +12,7 @@ from nltk_ls import bag_of_words
 from nltk_ls import tokenize
 from nltk_ls import stem
 
-with open('dataintents.json', 'r') as f:
+with open('dataintents.json', 'r') as f:#load in dataset
     dataints = json.load(f)
 
 tags = []
@@ -20,14 +20,14 @@ word_bag = []
 xy = []
 
 for int in dataints ['dataintents']:
-    # add to tag list
+    # tags 
     tags.append(int['tag'])
     for pat in int['patterns']:
-        # tokenize each word in the sentence
+        # each word is tokenize
         n = tokenize(pat)
-        # add to our words list
+        # added on wordlist
         word_bag.extend(n)
-        # add to xy pair
+        #  pair added
         xy.append((n, int['tag']))
 
 # stem and lower each word
@@ -44,6 +44,7 @@ print(len(xy), "patterns")
 #training data
 X_train_data = []
 y_train_data = []
+#xy pair
 for (pat_sent, tag) in xy:
 
     bag = bag_of_words(pat_sent, word_bag)
