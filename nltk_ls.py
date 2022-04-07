@@ -2,13 +2,13 @@ import numpy as np
 import nltk
 #Snowball stemmer
 from nltk.stem.snowball import EnglishStemmer
-stemmer = EnglishStemmer()
-def tokenize(sentence):
+stemmer = EnglishStemmer()#snowball includes different language stemmer but we need english stemmer
+def tokenize(sentence):#tokenize
     
-    return nltk.word_tokenize(sentence)
+    return nltk.word_tokenize(sentence) #split the sentence
 
 
-def stem(word):
+def stem(word):#analysing root of the word
   
     return stemmer.stem(word.lower())
 

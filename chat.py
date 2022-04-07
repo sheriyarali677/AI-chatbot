@@ -29,7 +29,7 @@ def make_reply():
     device = torch.device('cpu')
 
     with open('dataintents.json', 'r') as json_data:
-        dataintents = json.load(json_data)
+        dataintents = json.load(json_data)#load in dataintents
 
     FILE = "data_output.pth" #file where new bag of words are stored and used when training the chatbot
     data = torch.load(FILE)
@@ -42,9 +42,9 @@ def make_reply():
 
     word_bag = data['word_bag']
     #loading all words and tags into data file inorder to have improve next session
-    tags = data['tags']
+    tags = data['tags']#tags are different categories that includes various responses of the data scraped
     model_state = data["model_state"]
-
+    #nueral
     model = Modelnet(size_input, size_hidden, size_output).to(device)
     model.load_state_dict(model_state)
     model.eval()
@@ -53,8 +53,8 @@ def make_reply():
     print("Start chat! ")
     while True:
         lines = message
-        
-        #tokenization
+
+        #tokenizing each message
         lines = tokenize(lines)
         X = bag_of_words(lines, word_bag)
         X = X.reshape(1, X.shape[0])
@@ -65,7 +65,7 @@ def make_reply():
 
         tag = tags[predicted.item()]
 
-        probability = torch.softmax(output, dim=1)
+        probability = torch.softmax(output, dim=1)#probability for predicting right response
         prob = probability[0][predicted.item()]
         print(tag)
         if prob.item() > 0.65:

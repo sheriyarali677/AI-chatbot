@@ -58,7 +58,7 @@ X_train_data = np.array(X_train_data)
 # parameters 
 size_batch = 8
 lr = 0.001
-epoch_count = 1000
+epoch_count = 1000 #complete passes through the dataset
 size_hidden = 8
 size_input = len(X_train_data[0])
 size_output = len(tags)
@@ -85,7 +85,7 @@ train_loader = DataLoader(dataset=dataset, batch_size=size_batch, num_workers=0,
 device = torch.device('cpu')
 model = Modelnet(size_input, size_hidden, size_output).to(device)
 
-# Loss and optimiser
+# optimiser and crossentropy loss
 opt = torch.optim.Adam(model.parameters(), lr=lr)
 crit = nn.CrossEntropyLoss()
 
